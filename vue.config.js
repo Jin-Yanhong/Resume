@@ -9,6 +9,7 @@ function resolve(dir) {
 const port = 9000;
 
 module.exports = defineConfig({
+	publicPath: process.env.NODE_ENV === 'production' ? '/Resume' : '/',
 	transpileDependencies: true,
 	productionSourceMap: false,
 	devServer: {
