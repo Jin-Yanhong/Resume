@@ -23,8 +23,6 @@ app.use(pinia);
 window.onload = function () {
 	const locale = window.navigator.language;
 	useAppStore().setLocale(locale);
-
-	console.log(process.env);
 };
 
 app.mount('#app');

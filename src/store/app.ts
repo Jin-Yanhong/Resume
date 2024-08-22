@@ -4,7 +4,7 @@ import { setI18nLocale } from '@/i18n';
 export const useAppStore = defineStore({
 	id: 'app',
 	state: () => ({
-		locale: 'zh',
+		locale: window.navigator.language,
 	}),
 	getters: {
 		getLocale(): string {
