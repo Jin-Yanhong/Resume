@@ -1,7 +1,26 @@
 import { createApp } from 'vue';
-import App from './App.vue';
-import router from './router';
+import { createPinia } from 'pinia';
 
-import '@/assets/index.css';
+import App from '@/App.vue';
+import router from '@/router/index';
+import { i18n } from '@/i18n/index';
+import { i18nTm, getStorage, setStorage } from '@/utils/index';
 
-createApp(App).use(router).mount('#app');
+import { useAppStore } from './store/app';
+
+import '@/assets/style/tailwind.css';
+import '@/assets/style/index.less';
+
+const app = createApp(App);
+const pinia = createPinia();
+
+app.config.globalProperties.$i18nTm = i18nTm;
+app.config.globalProperties.$setStorage = setStorage;
+app.config.globalProperties.$getStorage = getStorage;
+
+app.use(router).use(i18n).use(pinia).mount('#app');
+
+window.onload = function () {
+	const locale = window.navigator.language;
+	useAppStore().setLocale(locale);
+};

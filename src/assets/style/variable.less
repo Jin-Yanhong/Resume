@@ -1,0 +1,117 @@
+@layout-gap: 10px;
+
+@during-link: 0.3s;
+
+@color-default-bg: #f4f6f8;
+@color-theme: #0076F6;
+@color-theme-active: transparent;
+
+@color-light: #ffffff;
+@color-dark: #2f3640;
+@color-mask: #3335;
+
+@color-hover: #dcdde1;
+@color-shadow: #7f8fa6;
+@color-active: #0076F6;
+@color-border: #dcdfe6;
+@color-pageBg: #F3F5F7;
+
+@color-primary: #3c9cff;
+@color-success: #26C38E;
+@color-danger: #f56c6c;
+@color-warning: #f9ae3d;
+
+@color-text-light: #999;
+@color-text-dark: #333;
+
+@color-menu-bg: @color-theme;
+@color-menu-bg-active: @color-theme-active;
+@color-layout-bg-navbar: @color-theme;
+@color-layout-bg-sidebar: @color-theme;
+
+@borderRadius: 6px;
+
+@maxWidth: 920px; // 页面宽度
+@heightAuto: 100%; // 页面高度
+@heightfull: 100vh; // 全尺寸高度
+
+.boxShadow() {
+	box-shadow: 0 8px 20px rgba(0, 80, 179, 0.12);
+}
+
+.mix-in-flex() {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.noGap() {
+	margin: 0;
+	padding: 0;
+}
+
+.webkit-scrollbar() {
+	&::-webkit-scrollbar-track-piece {
+		border-radius: 4px;
+		overflow: hidden;
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar {
+		width: 4px;
+		height: 0;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #50A4FF;
+		border-radius: 4px;
+	}
+}
+
+.flex() {
+	.mix-in-flex();
+
+	.center() {
+		.mix-in-flex();
+		justify-content: center;
+		align-items: center;
+	}
+
+	.start() {
+		.mix-in-flex();
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	.end() {
+		.mix-in-flex();
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.between() {
+		.mix-in-flex();
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.evenly() {
+		.mix-in-flex();
+		justify-content: space-evenly;
+		align-items: center;
+	}
+
+	.nowrap() {
+		.mix-in-flex();
+		flex-wrap: nowrap;
+	}
+}
+
+.mask() {
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background: #00000044;
+}
