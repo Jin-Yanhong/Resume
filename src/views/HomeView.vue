@@ -1,6 +1,6 @@
 <template>
 	<div>
-		{{ $options.name }}
+		{{ $tm('resume.info.name') }}
 	</div>
 </template>
 
