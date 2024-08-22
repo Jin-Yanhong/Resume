@@ -4,20 +4,18 @@ export function getStorage(key: string): string | Array<any> | object | any {
 	const str: string = window.localStorage[key] ?? undefined;
 	try {
 		if (str) {
-			const storageString = window.localStorage.getItem(key) as string;
+			const storageString: string = window.localStorage.getItem(key) ?? '';
 			return JSON.parse(storageString)[key];
 		} else {
-			return '';
+			return undefined;
 		}
 	} catch (error: any) {
-		return '';
+		return undefined;
 	}
 }
 
 export function setStorage(key: string, value: any): void {
-	const str = JSON.stringify({
-		[key]: value,
-	});
+	const str = JSON.stringify({ [key]: value });
 	window.localStorage.setItem(key, str);
 }
 

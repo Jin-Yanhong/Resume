@@ -68,4 +68,5 @@ function request(requestData: AxiosRequestConfig, successCallback: requestCallba
 		});
 }
 
+export { service };
 export default request;
