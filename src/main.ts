@@ -8,7 +8,8 @@ import { i18nTm, getStorage, setStorage } from '@/utils/index';
 
 import { useAppStore } from './store/app';
 
-import '@/assets/index.css';
+import '@/assets/style/tailwind.css';
+import '@/assets/style/index.less';
 
 const app = createApp(App);
 const pinia = createPinia();
